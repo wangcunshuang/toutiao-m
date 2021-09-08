@@ -1,11 +1,6 @@
-/**
- * 用户相关的请求模块
- */
-import request from '@/utils/request'
+import request from '../utils/request.js'
+// import store from '@/store'
 
-/**
- * 用户登录
- */
 export const login = data => {
   return request({
     method: 'POST',
@@ -14,9 +9,23 @@ export const login = data => {
   })
 }
 
-export const getSmsCode = mobile => {
+export const sendSms = mobile => {
   return request({
     method: 'GET',
     url: `/app/v1_0/sms/codes/${mobile}`
+  })
+}
+
+export const getUserInfo = () => {
+  return request({
+    method: 'GET',
+    url: '/app/v1_0/user'
+  })
+}
+
+export const getUserChannels = () => {
+  return request({
+    method: 'GET',
+    url: '/app/v1_0/user/channels'
   })
 }
