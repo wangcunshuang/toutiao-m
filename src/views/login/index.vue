@@ -42,10 +42,11 @@ title="登录"
     v-else
     native-type="button"
     class="send-sms-btn"
-     round size="small"
-     type="default"
-     @click="onSentSms"
-     >发送验证码</van-button>
+    round
+    size="small"
+    type="default"
+    @click="onSentSms"
+    >发送验证码</van-button>
   </template>
   </van-field>
   <div style="margin: 16px;">

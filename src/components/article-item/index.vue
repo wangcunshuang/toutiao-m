@@ -1,6 +1,14 @@
 <template>
-  <van-cell is-link class="article-item">
-
+  <van-cell
+  is-link
+  class="article-item"
+  :to="{
+    name:'article',
+    params: {
+      articleId:article.art_id
+    },
+  }"
+  >
       <template #title>
         <span class="title van-multi-ellipsis--l2"> {{article.title}}</span>
       </template>
@@ -26,7 +34,7 @@
        </div>
       </template>
 
-      <template #default>
+      <template #value>
         <van-image
         v-if="article.cover.type === 1"
           class="right-cover"
@@ -34,7 +42,6 @@
           :src="article.cover.images[0]"
         />
       </template>
-
   </van-cell>
 </template>
 

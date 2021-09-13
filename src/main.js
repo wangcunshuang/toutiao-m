@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 加载 dayjs 初始化配置
+import './utils/dayjs.js'
+
 import Vant from 'vant'
 import 'vant/lib/index.css'
 

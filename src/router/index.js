@@ -2,6 +2,10 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
+    path: '/',
+    redirect: '/home'
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('@/views/login')
@@ -32,6 +36,17 @@ const routes = [
         component: () => import('@/views/my/index.vue')
       }
     ]
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/views/search/index.vue')
+  },
+  {
+    path: '/article/:articleId',
+    name: 'article',
+    props: true,
+    component: () => import('@/views/article/index.vue')
   }
 ]
 

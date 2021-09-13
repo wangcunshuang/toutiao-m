@@ -13,10 +13,6 @@
       error-text="请求失败，点击重新加载"
       @load="onLoad"
     >
-      <!-- <van-cell
-      v-for="(item,index) in list"
-      :key="index"
-      :title="item.title" /> -->
       <article-item
       v-for="(item,index) in list"
       :key="index"
@@ -87,7 +83,6 @@ export default {
         const { results } = res.data
         this.list.unshift(...results)
         this.isreFreshLoading = false
-        this.articleLength = res.data.results.length
         this.reFreshSuccessText = `刷新成功,更新了 ${results.length}条数据`
       } catch (err) {
         this.isreFreshLoading = false

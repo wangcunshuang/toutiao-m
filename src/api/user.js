@@ -1,5 +1,4 @@
 import request from '../utils/request.js'
-// import store from '@/store'
 
 export const login = data => {
   return request({
