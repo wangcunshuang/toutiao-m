@@ -102,7 +102,6 @@ export default {
         const { data: res } = await login(user)
         this.$store.commit('setUser', res.data)
         this.$toast.success('登录成功！')
-
         this.$router.back()
       } catch (err) {
         if (err.response.status === 400) {
@@ -118,9 +117,8 @@ export default {
       // 1.校验手机号
       try {
         await this.$refs.loginForm.validate('mobile')
-        console.log('验证通过')
       } catch (err) {
-        return console.log('验证失败', err)
+        return
       }
       // 2.验证通过，显示倒计时
       this.isCountDownShow = true
@@ -133,7 +131,7 @@ export default {
         if (err.response.status === 429) {
           this.$toast.fail('获取验证码过于频繁，请稍后重试')
         } else {
-          this.$$toast('获取验证码失败，请稍后重试')
+          this.$toast('获取验证码失败，请稍后重试')
         }
       }
     }
